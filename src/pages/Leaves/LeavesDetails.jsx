@@ -9,7 +9,7 @@ function leavesDetails() {
 
     const [leavesData, setleavesData] = useState([]);
 
-
+    //fetch leaves details 
     useEffect(() => {
         const fetchLeaves = async () => {
             try {
@@ -33,12 +33,31 @@ function leavesDetails() {
         fetchLeaves()
     }, []);
 
-    // const AcceptLeave = async () => {
 
-    // }
-    //   const RejectLeave = async () => {
+    // approve leaves  by admin site 
 
-    // }
+    const LeavesApproval = async (id, status) => {
+        try {
+            const token = localStorage.getItem("token")
+            const response = await fetch(`http://localhost:8000/api/leaves/permision/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body:JSON.stringify({status})
+            });
+            if (response.ok) {
+                alert(`leaves ${status} successfully!!`)
+            }
+
+
+        } catch (error) {
+            console.error("Error in updateting leaves status:", error);
+        }
+
+    }
+
 
     return (
         <div>
@@ -114,8 +133,24 @@ function leavesDetails() {
 
                 </div><br />
                 <div>
-                    <button className='px-3 py-2 bg-green-400 rounded text-sm mx-2 cursor-pointer'>Accept</button>
-                    <button className='px-3 py-2 bg-red-400 rounded text-sm mx-2 cursor-pointer'>Reject</button>
+                    {
+                        leavesData?.status === 'success' ?
+                            <h2 className='text-green-600 font-semibold'>Status Already Accepted</h2>
+                            :
+                            <div>
+                                <button className='px-3 py-2
+                                 bg-green-400 rounded 
+                                 text-sm mx-2 cursor-pointer
+                                 '
+                                    onClick={()=>LeavesApproval(leavesData?._id, "success")}
+                                >Accept</button>
+                                <button className='px-3 py-2
+                                 bg-red-400 rounded text-sm
+                                  mx-2 cursor-pointer'
+                                    onClick={()=>LeavesApproval(leavesData?._id, "reject")}
+                                >Reject</button>
+                            </div>
+                    }
                 </div>
             </div>
         </div>
