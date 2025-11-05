@@ -47,7 +47,7 @@ function AddEmp() {
 
       const AddEmpAPICall = async () => {
         try {
-          const url = "http://localhost:8000/api/employee/addEmp";
+          const url = "https://ems-backend-xjj3.vercel.app/api/employee/addEmp";
           const token = localStorage.getItem("token")
           const response = await fetch(url, {
             method: "POST",

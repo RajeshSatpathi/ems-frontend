@@ -2,7 +2,7 @@
 export const fetchEmpAPICall = async (id) => {
     try {
         const token = localStorage.getItem("token")
-        const response = await fetch(`http://localhost:8000/api/employee/${id}`, {
+        const response = await fetch(`https://ems-backend-xjj3.vercel.app/api/employee/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -22,7 +22,7 @@ export const fetchEmpAPICall = async (id) => {
 export const fetchDeptData = async () => {
     try {
         const token = localStorage.getItem("token")
-        const response = await fetch("http://localhost:8000/department", {
+        const response = await fetch("https://ems-backend-xjj3.vercel.app/department", {
             headers: {
                 Authorization: `Bearer ${token}`
             }

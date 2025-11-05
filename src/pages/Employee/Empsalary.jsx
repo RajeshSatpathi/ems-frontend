@@ -43,7 +43,7 @@ useEffect(() => {
   const fetchSalary = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:8000/api/salary/${id}`, {
+      const response = await fetch(`https://ems-backend-xjj3.vercel.app/api/salary/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

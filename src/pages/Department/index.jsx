@@ -1,6 +1,6 @@
 import React from 'react'
 import DataTable, { Alignment } from 'react-data-table-component';
-import { MdRemoveRedEye } from "react-icons/md";
+
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteSweep } from "react-icons/md";
 import { Link } from "react-router-dom"
@@ -78,7 +78,7 @@ function index() {
     const fetchDeptData = async () => {
       try {
         const token = localStorage.getItem("token")
-        const response = await fetch("http://localhost:8000/department", {
+        const response = await fetch("https://ems-backend-xjj3.vercel.app/department", {
           headers: {
             Authorization: `Bearer ${token}`
           }

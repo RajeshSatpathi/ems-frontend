@@ -12,7 +12,7 @@ function EditDepartment() {
             try {
                 const token = localStorage.getItem("token")
 
-                const response = await fetch(`http://localhost:8000/department/${id}`, {
+                const response = await fetch(`https://ems-backend-xjj3.vercel.app/department/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -34,7 +34,7 @@ function EditDepartment() {
         e.preventDefault();
         try {
             try {
-                const url = `http://localhost:8000/department/edit/${id}`;
+                const url = `https://ems-backend-xjj3.vercel.app/department/edit/${id}`;
                 const token = localStorage.getItem("token")
                 const response = await fetch(url, {
                     method: "PUT",

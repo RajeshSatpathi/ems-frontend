@@ -26,7 +26,7 @@ function AuthContext({ children }) {
                 return;
             }
             try {
-                const url = "http://localhost:8000/api/auth/verify";
+                const url = "https://ems-backend-xjj3.vercel.app/api/auth/verify";
 
 
                 const response = await fetch(url, {

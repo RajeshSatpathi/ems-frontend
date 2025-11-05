@@ -13,7 +13,7 @@ function index() {
     //login api call function 
     const LoginApiCall = async () => {
         try {
-            const url = "http://localhost:8000/api/auth/login";
+            const url = "https://ems-backend-xjj3.vercel.app/api/auth/login";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

@@ -47,7 +47,7 @@ function EmpSalary() {
              if (!userData?._id) return; // wait until userData is available
             try {
                 const token = localStorage.getItem("token")
-                const response = await fetch(`http://localhost:8000/api/salary/${userData._id}`, {
+                const response = await fetch(`https://ems-backend-xjj3.vercel.app/api/salary/${userData._id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

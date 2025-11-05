@@ -13,7 +13,7 @@ export const Empcolumns = [
     cell: (row) => (
       row.userId?.image ? (
         <img
-          src={`http://localhost:8000/Public/uploads/${row.userId?.image}`}
+          src={`https://ems-backend-xjj3.vercel.app/Public/uploads/${row.userId?.image}`}
           alt="Profile"
           style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover" }}
         />

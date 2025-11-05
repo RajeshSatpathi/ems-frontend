@@ -34,7 +34,7 @@ function index() {
     } else {
       // console.log(inputData)
       try {
-        const url = "http://localhost:8000/api/salary/add";
+        const url = "https://ems-backend-xjj3.vercel.app/api/salary/add";
         const token = localStorage.getItem("token")
         const response = await fetch(url, {
           method: "POST",
@@ -69,7 +69,7 @@ function index() {
     if (selectedDeptId) {
       try {
         const token = localStorage.getItem("token")
-        const res = await fetch(`http://localhost:8000/api/employee/department/${selectedDeptId}`, {
+        const res = await fetch(`https://ems-backend-xjj3.vercel.app/api/employee/department/${selectedDeptId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

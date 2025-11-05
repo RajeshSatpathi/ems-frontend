@@ -46,7 +46,7 @@ function AddLeaves() {
 
             try {
                 const token = localStorage.getItem('token');
-                const url = "http://localhost:8000/api/leaves/add";
+                const url = "https://ems-backend-xjj3.vercel.app/api/leaves/add";
                 const response = await fetch(url, {
                     method: "POST",
                     headers: {

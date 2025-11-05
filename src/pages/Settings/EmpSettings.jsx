@@ -24,7 +24,7 @@ function EmpSettings() {
             toast("Please Fill all fields..")
         } else {
             try {
-                const url = "http://localhost:8000/department/addDepartment";
+                const url = "https://ems-backend-xjj3.vercel.app/department/addDepartment";
                 const token = localStorage.getItem("token")
                 const response = await fetch(url, {
                     method: "POST",

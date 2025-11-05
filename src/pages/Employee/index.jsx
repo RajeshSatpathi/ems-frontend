@@ -14,7 +14,7 @@ function index() {
   const fetchEmpAPICall = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:8000/api/employee/", {
+      const response = await fetch("https://ems-backend-xjj3.vercel.app/api/employee/", {
         headers: {
           Authorization: `Bearer ${token}`
         }

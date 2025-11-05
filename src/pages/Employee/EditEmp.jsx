@@ -60,7 +60,7 @@ function EditEmp() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:8000/api/employee/edit/${id}`, {
+      const response = await fetch(`https://ems-backend-xjj3.vercel.app/api/employee/edit/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

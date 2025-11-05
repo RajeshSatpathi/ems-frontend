@@ -9,7 +9,7 @@ function ViewEmp() {
     const fetchEmpAPICall = async () => {
       try {
         const token = localStorage.getItem("token")
-        const response = await fetch(`http://localhost:8000/api/employee/${id}`, {
+        const response = await fetch(`https://ems-backend-xjj3.vercel.app/api/employee/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -35,7 +35,7 @@ function ViewEmp() {
       <div className='bg-gray-100 rounded w-full flex flex-col items-center justify-center p-3'>
 
         <div className='w-30 h-30  my-2 rounded-full'>
-          <img src={`http://localhost:8000/Public/uploads/${Emp.userId?.image}`} alt="" />
+          <img src={`https://ems-backend-xjj3.vercel.app/Public/uploads/${Emp.userId?.image}`} alt="" />
         </div>
         <div className='flex gap-6 flex-wrap  '>
           <div className='flex flex-col  lg:w-70 w-full '>
